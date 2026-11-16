@@ -4,17 +4,19 @@
     "url": "https://74-220-25-65.sslip.io/healthz",
     "icon": "https://icons.duckduckgo.com/ip3/74-220-25-65.sslip.io.ico",
     "slug": "noduma-coordinator",
-    "status": "down",
-    "uptime": "100.00%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "100.00%",
-    "time": 766,
-    "timeDay": 766,
-    "timeWeek": 766,
-    "timeMonth": 766,
-    "timeYear": 766,
-    "dailyMinutesDown": {}
+    "status": "up",
+    "uptime": "54.06%",
+    "uptimeDay": "54.06%",
+    "uptimeWeek": "54.06%",
+    "uptimeMonth": "54.06%",
+    "uptimeYear": "54.06%",
+    "time": 753,
+    "timeDay": 753,
+    "timeWeek": 753,
+    "timeMonth": 753,
+    "timeYear": 753,
+    "dailyMinutesDown": {
+      "2026-11-16": 7
+    }
   }
 ]
