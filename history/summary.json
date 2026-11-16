@@ -1,15 +1,15 @@
 [
   {
     "name": "Noduma coordinator",
-    "url": "https://74-220-25-65.sslip.io/healthz",
-    "icon": "https://icons.duckduckgo.com/ip3/74-220-25-65.sslip.io.ico",
+    "url": "https://app.noduma.dev/healthz",
+    "icon": "https://icons.duckduckgo.com/ip3/app.noduma.dev.ico",
     "slug": "noduma-coordinator",
     "status": "up",
-    "uptime": "54.06%",
-    "uptimeDay": "54.06%",
-    "uptimeWeek": "54.06%",
-    "uptimeMonth": "54.06%",
-    "uptimeYear": "54.06%",
+    "uptime": "98.75%",
+    "uptimeDay": "98.75%",
+    "uptimeWeek": "98.75%",
+    "uptimeMonth": "98.75%",
+    "uptimeYear": "98.75%",
     "time": 753,
     "timeDay": 753,
     "timeWeek": 753,
@@ -18,5 +18,23 @@
     "dailyMinutesDown": {
       "2026-11-16": 7
     }
+  },
+  {
+    "name": "Noduma homepage",
+    "url": "https://noduma.dev/healthz",
+    "icon": "https://icons.duckduckgo.com/ip3/noduma.dev.ico",
+    "slug": "noduma-homepage",
+    "status": "up",
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
+    "time": 427,
+    "timeDay": 427,
+    "timeWeek": 427,
+    "timeMonth": 427,
+    "timeYear": 427,
+    "dailyMinutesDown": {}
   }
 ]
