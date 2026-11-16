@@ -1,5 +1,5 @@
-# Outside uptime check for the Noduma coordinator (danielitogomez/Noduma,
-# SPEC-047). Runs on GitHub, not in the Civo cluster, so it still reports
+# Outside uptime check for the Noduma coordinator and homepage
+# (danielitogomez/Noduma, SPEC-047, SPEC-048). Served at status.noduma.dev. Runs on GitHub, not in the Civo cluster, so it still reports
 # when the whole cluster is gone. Down and up messages go to the operators'
 # Telegram group "NodumaOps" (secrets NOTIFICATION_TELEGRAM*).
 owner: danielitogomez
@@ -8,18 +8,25 @@ user-agent: noduma-status
 
 sites:
   - name: Noduma coordinator
-    url: https://74-220-25-65.sslip.io/healthz
+    url: https://app.noduma.dev/healthz
+    expectedStatusCodes:
+      - 200
+    maxResponseTime: 5000
+  - name: Noduma homepage
+    url: https://noduma.dev/healthz
     expectedStatusCodes:
       - 200
     maxResponseTime: 5000
 
 status-website:
-  baseUrl: /noduma-status
+  cname: status.noduma.dev
   name: Noduma status
-  introTitle: "**Noduma** coordinator status"
+  introTitle: "**Noduma** status"
   introMessage: Checked every 5 minutes from GitHub Actions, outside the cluster.
   navbar:
     - title: Status
       href: /
+    - title: Homepage
+      href: https://noduma.dev
     - title: GitHub
       href: https://github.com/$OWNER/$REPO

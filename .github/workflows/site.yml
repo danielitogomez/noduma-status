@@ -16,6 +16,8 @@ on:
   push:
     paths:
       - "assets/**"
+      # A changed site or domain (status-website) rebuilds the page at once.
+      - ".upptimerc.yml"
   schedule:
     - cron: "0 1 * * *"
   workflow_dispatch:
