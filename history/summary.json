@@ -4,7 +4,7 @@
     "url": "https://74-220-25-65.sslip.io/healthz",
     "icon": "https://icons.duckduckgo.com/ip3/74-220-25-65.sslip.io.ico",
     "slug": "noduma-coordinator",
-    "status": "up",
+    "status": "down",
     "uptime": "100.00%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
