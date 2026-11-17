@@ -1,7 +1,7 @@
-url: https://74-220-25-65.sslip.io/healthz
+url: https://app.noduma.dev/healthz
 status: up
 code: 200
-responseTime: 739
-lastUpdated: 2026-11-16T12:28:39.129Z
+responseTime: 423
+lastUpdated: 2026-11-17T04:59:07.913Z
 startTime: 2026-11-16T12:12:37.286Z
 generator: Upptime <https://github.com/upptime/upptime>
