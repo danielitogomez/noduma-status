@@ -5,16 +5,16 @@
     "icon": "https://icons.duckduckgo.com/ip3/app.noduma.dev.ico",
     "slug": "noduma-coordinator",
     "status": "up",
-    "uptime": "99.86%",
+    "uptime": "99.89%",
     "uptimeDay": "100.00%",
-    "uptimeWeek": "99.86%",
-    "uptimeMonth": "99.86%",
-    "uptimeYear": "99.86%",
-    "time": 539,
-    "timeDay": 450,
-    "timeWeek": 539,
-    "timeMonth": 539,
-    "timeYear": 539,
+    "uptimeWeek": "99.89%",
+    "uptimeMonth": "99.89%",
+    "uptimeYear": "99.89%",
+    "time": 522,
+    "timeDay": 420,
+    "timeWeek": 522,
+    "timeMonth": 522,
+    "timeYear": 522,
     "dailyMinutesDown": {
       "2026-11-16": 7
     }
@@ -30,11 +30,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 424,
-    "timeDay": 430,
-    "timeWeek": 424,
-    "timeMonth": 424,
-    "timeYear": 424,
+    "time": 431,
+    "timeDay": 467,
+    "timeWeek": 431,
+    "timeMonth": 431,
+    "timeYear": 431,
     "dailyMinutesDown": {}
   }
 ]
