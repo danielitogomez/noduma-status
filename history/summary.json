@@ -5,11 +5,11 @@
     "icon": "https://icons.duckduckgo.com/ip3/app.noduma.dev.ico",
     "slug": "noduma-coordinator",
     "status": "down",
-    "uptime": "99.83%",
-    "uptimeDay": "99.66%",
-    "uptimeWeek": "99.83%",
-    "uptimeMonth": "99.83%",
-    "uptimeYear": "99.83%",
+    "uptime": "99.70%",
+    "uptimeDay": "99.04%",
+    "uptimeWeek": "99.70%",
+    "uptimeMonth": "99.70%",
+    "uptimeYear": "99.70%",
     "time": 522,
     "timeDay": 420,
     "timeWeek": 522,
@@ -17,7 +17,7 @@
     "timeYear": 522,
     "dailyMinutesDown": {
       "2026-11-16": 7,
-      "2026-11-21": 5
+      "2026-11-21": 14
     }
   },
   {
@@ -26,18 +26,56 @@
     "icon": "https://icons.duckduckgo.com/ip3/noduma.dev.ico",
     "slug": "noduma-homepage",
     "status": "down",
-    "uptime": "100.00%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "100.00%",
+    "uptime": "99.86%",
+    "uptimeDay": "99.38%",
+    "uptimeWeek": "99.86%",
+    "uptimeMonth": "99.86%",
+    "uptimeYear": "99.86%",
     "time": 431,
     "timeDay": 467,
     "timeWeek": 431,
     "timeMonth": 431,
     "timeYear": 431,
     "dailyMinutesDown": {
-      "2026-11-21": 0
+      "2026-11-21": 9
     }
+  },
+  {
+    "name": "Noduma homepage www",
+    "url": "https://www.noduma.dev/healthz",
+    "icon": "https://icons.duckduckgo.com/ip3/www.noduma.dev.ico",
+    "slug": "noduma-homepage-www",
+    "status": "down",
+    "uptime": "46.12%",
+    "uptimeDay": "46.12%",
+    "uptimeWeek": "46.12%",
+    "uptimeMonth": "46.12%",
+    "uptimeYear": "46.12%",
+    "time": 0,
+    "timeDay": 0,
+    "timeWeek": 0,
+    "timeMonth": 0,
+    "timeYear": 0,
+    "dailyMinutesDown": {
+      "2026-11-21": 1
+    }
+  },
+  {
+    "name": "Noduma onboarding",
+    "url": "https://onboarding.noduma.dev/healthz",
+    "icon": "https://icons.duckduckgo.com/ip3/onboarding.noduma.dev.ico",
+    "slug": "noduma-onboarding",
+    "status": "down",
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
+    "time": 0,
+    "timeDay": 0,
+    "timeWeek": 0,
+    "timeMonth": 0,
+    "timeYear": 0,
+    "dailyMinutesDown": {}
   }
 ]
