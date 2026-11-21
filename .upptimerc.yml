@@ -1,5 +1,5 @@
 # Outside uptime check for the Noduma coordinator and homepage
-# (danielitogomez/Noduma, SPEC-047, SPEC-048). Served at status.noduma.dev. Runs on GitHub, not in the Civo cluster, so it still reports
+# (danielitogomez/Noduma, SPEC-047, SPEC-048, SPEC-050). Served at status.noduma.dev. Runs on GitHub, not in the Civo cluster, so it still reports
 # when the whole cluster is gone. Down and up messages go to the operators'
 # Telegram group "NodumaOps" (secrets NOTIFICATION_TELEGRAM*).
 owner: danielitogomez
@@ -7,16 +7,43 @@ repo: noduma-status
 user-agent: noduma-status
 
 sites:
+  # Each check: up to 3 tries (Upptime's fixed first try plus 2 retries, 2 s
+  # and 10 s apart) and no curl-level retry, 10 s to connect, 15 s in all. A
+  # dead endpoint is declared down in under a minute, not after ~5 minutes of
+  # nested retries (SPEC-047 F2).
   - name: Noduma coordinator
     url: https://app.noduma.dev/healthz
     expectedStatusCodes:
       - 200
     maxResponseTime: 5000
+    maxRetries: 1
+    connectTimeout: 10
+    requestTimeout: 15
   - name: Noduma homepage
     url: https://noduma.dev/healthz
     expectedStatusCodes:
       - 200
     maxResponseTime: 5000
+    maxRetries: 1
+    connectTimeout: 10
+    requestTimeout: 15
+  - name: Noduma homepage www
+    url: https://www.noduma.dev/healthz
+    expectedStatusCodes:
+      - 200
+    maxResponseTime: 5000
+    maxRetries: 1
+    connectTimeout: 10
+    requestTimeout: 15
+  # Contributor onboarding portal; its /healthz also checks its database.
+  - name: Noduma onboarding
+    url: https://onboarding.noduma.dev/healthz
+    expectedStatusCodes:
+      - 200
+    maxResponseTime: 5000
+    maxRetries: 1
+    connectTimeout: 10
+    requestTimeout: 15
 
 status-website:
   cname: status.noduma.dev

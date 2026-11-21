@@ -1,0 +1,54 @@
+#
+# Keeps the 5-minute uptime check running (Noduma SPEC-047 D6).
+#
+# GitHub delays and drops scheduled runs under load: the "*/5" cron of
+# uptime.yml fired only every 4 to 9 hours (2026-11-17 to 2026-11-21) and
+# missed the whole Civo network outage of 2026-11-21. This job starts
+# Uptime CI itself every 5 minutes for about 5 h 45 min, then starts its own
+# successor. workflow_dispatch is the one event the default GITHUB_TOKEN may
+# start, so no personal token is needed. The hourly cron only restarts the
+# loop if the chain ever breaks; a run that finds a live loop exits at once.
+# Public repository: the minutes are free.
+#
+
+name: Uptime loop
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+permissions:
+  actions: write
+jobs:
+  loop:
+    name: Start Uptime CI every 5 minutes
+    runs-on: ubuntu-latest
+    timeout-minutes: 355
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      # Successor starts after this; must stay below timeout-minutes.
+      LOOP_SECONDS: "20700"
+      INTERVAL_SECONDS: "300"
+    steps:
+      - name: Exit if another loop is alive
+        id: alive
+        run: |
+          # Another in-progress loop younger than 5 h 30 min is alive: exit.
+          # An older one is about to hand over to this run, so continue.
+          now=$(date -u +%s)
+          live=$(gh api "repos/$GH_REPO/actions/workflows/uptime-loop.yml/runs?status=in_progress&per_page=20" \
+            --jq "[.workflow_runs[] | select(.id != ${{ github.run_id }}) | .run_started_at | fromdateiso8601 | select($now - . < 19800)] | length")
+          echo "live=$live" >> "$GITHUB_OUTPUT"
+          [ "$live" = 0 ] || echo "Another loop is running; nothing to do."
+      - name: Start Uptime CI every 5 minutes
+        if: steps.alive.outputs.live == '0'
+        run: |
+          end=$(( $(date -u +%s) + LOOP_SECONDS ))
+          while [ "$(date -u +%s)" -lt "$end" ]; do
+            # A failed dispatch (GitHub API hiccup) must not end the loop.
+            gh workflow run uptime.yml --ref "$GITHUB_REF_NAME" || echo "::warning::could not start Uptime CI"
+            sleep "$INTERVAL_SECONDS"
+          done
+      - name: Start the next loop
+        if: steps.alive.outputs.live == '0'
+        run: gh workflow run uptime-loop.yml --ref "$GITHUB_REF_NAME"
