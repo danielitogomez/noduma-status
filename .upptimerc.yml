@@ -1,7 +1,9 @@
-# Outside uptime check for the Noduma coordinator and homepage
-# (danielitogomez/Noduma, SPEC-047, SPEC-048, SPEC-050). Served at status.noduma.dev. Runs on GitHub, not in the Civo cluster, so it still reports
-# when the whole cluster is gone. Down and up messages go to the operators'
-# Telegram group "NodumaOps" (secrets NOTIFICATION_TELEGRAM*).
+# Outside uptime check for Noduma: the coordinator, the homepage, the Noduma
+# app and the chat page (danielitogomez/Noduma, SPEC-047, SPEC-048, SPEC-080,
+# SPEC-081). Served at status.noduma.dev. Runs on GitHub, not in the Civo
+# cluster, so it still reports when the whole cluster is gone. Down and up
+# messages go to the maintainers' Telegram group "NodumaOps" (secrets
+# NOTIFICATION_TELEGRAM*).
 owner: danielitogomez
 repo: noduma-status
 user-agent: noduma-status
@@ -45,8 +47,7 @@ sites:
     connectTimeout: 10
     requestTimeout: 15
   # The Noduma app: the website people sign in to, on the same address as
-  # the coordinator's API (Noduma SPEC-079, SPEC-081). Its former address
-  # is gone.
+  # the coordinator's API (Noduma SPEC-079, SPEC-081).
   - name: Noduma app
     url: https://app.noduma.dev/
     expectedStatusCodes:
@@ -60,11 +61,15 @@ status-website:
   cname: status.noduma.dev
   name: Noduma status
   introTitle: "**Noduma** status"
-  introMessage: Checked every 5 minutes from GitHub Actions, outside the cluster.
+  introMessage: Checked every 15 minutes from GitHub Actions, outside the cluster.
   navbar:
     - title: Status
       href: /
     - title: Homepage
       href: https://noduma.dev
+    - title: Noduma app
+      href: https://app.noduma.dev
+    - title: Chat with an API key
+      href: https://chat.noduma.dev
     - title: GitHub
       href: https://github.com/$OWNER/$REPO
