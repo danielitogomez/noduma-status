@@ -35,6 +35,15 @@ sites:
     maxRetries: 1
     connectTimeout: 10
     requestTimeout: 15
+  # The chat page that takes an API key (Noduma SPEC-080).
+  - name: Noduma chat page
+    url: https://chat.noduma.dev/healthz
+    expectedStatusCodes:
+      - 200
+    maxResponseTime: 5000
+    maxRetries: 1
+    connectTimeout: 10
+    requestTimeout: 15
   # Contributor onboarding portal; its /healthz also checks its database.
   - name: Noduma onboarding
     url: https://onboarding.noduma.dev/healthz
