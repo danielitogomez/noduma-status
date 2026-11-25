@@ -11,6 +11,7 @@
 # * More by Anand Chowdhary: https://anandchowdhary.com
 
 
+# Every 15 minutes (Noduma SPEC-047); GitHub may delay a scheduled run.
 name: Uptime CI
 on:
   schedule:
