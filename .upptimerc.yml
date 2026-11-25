@@ -44,9 +44,11 @@ sites:
     maxRetries: 1
     connectTimeout: 10
     requestTimeout: 15
-  # Contributor onboarding portal; its /healthz also checks its database.
-  - name: Noduma onboarding
-    url: https://onboarding.noduma.dev/healthz
+  # The Noduma app: the website people sign in to, on the same address as
+  # the coordinator's API (Noduma SPEC-079, SPEC-081). Its former address
+  # is gone.
+  - name: Noduma app
+    url: https://app.noduma.dev/
     expectedStatusCodes:
       - 200
     maxResponseTime: 5000
